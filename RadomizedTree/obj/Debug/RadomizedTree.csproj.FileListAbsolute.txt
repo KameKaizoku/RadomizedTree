@@ -1,0 +1,6 @@
+D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\bin\Debug\RadomizedTree.exe
+D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\bin\Debug\RadomizedTree.pdb
+D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.csprojAssemblyReference.cache
+D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.csproj.CoreCompileInputs.cache
+D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.exe
+D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.pdb
