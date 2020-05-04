@@ -27,14 +27,16 @@ namespace RadomizedTree
       } 
       Console.WriteLine("Tree A\n");
       TreePrinter.PrintMyTree(A);
-      Console.WriteLine("Tree B\n");
-      TreePrinter.PrintMyTree(B);
       Console.WriteLine();
-      var t =A.Right(A.Root);
+      var t =A.Straite(A.Root);
+      
+      Console.WriteLine("\nTree B\n");
+      TreePrinter.PrintMyTree(B);
+      B.Symmetric(B.Root);
+      
       A.Delete(A.Root, B);
       Console.WriteLine("\nTree A\n");
       TreePrinter.PrintMyTree(A);
-    //  Console.WriteLine(B.Search(19));
     }
 
     public class MyTree
@@ -43,20 +45,20 @@ namespace RadomizedTree
       public MyNode Root { get; set; }
 
       
-      public MyNode Right(MyNode node)
+      public MyNode Straite(MyNode node)
       {
         if (node == null) return null;
         if (node == Root)
         {
           Console.Write($"{node.Key} ");
-          Right(node.L_Son);
+          Straite(node.L_Son);
         }
         else
         {
           if (node.L_Son != null)
           {
             Console.Write($"{node.Key} ");
-            Right(node.L_Son);
+            Straite(node.L_Son);
           }
           else
           {
@@ -68,7 +70,7 @@ namespace RadomizedTree
                 node = GetParet(node);
               }
 
-              Right(node.R_Bro);
+              Straite(node.R_Bro);
             }
 
             if (node.L_Son == null && node.R_Bro == null)
@@ -77,20 +79,27 @@ namespace RadomizedTree
               while(node != null && node.R_Bro==null)
                 node=GetParet(node);
               if (node == Root) return null;
-              if (node != null) Right(node.R_Bro);
+              if (node != null) Straite(node.R_Bro);
             }
           }
         }
         return null;
       }
 
+      public void Symmetric(MyNode node1)
+      {
+   
+          if(node1==null) return;
+          
+          Symmetric(node1.L_Son);
+          Console.Write($"{node1.Key} ");
+          Symmetric(node1.L_Son?.R_Bro);
+  
+      }
+
     public void Delete(MyNode A, MyTree B)
       {
         if(A==null) return;
- // Console.WriteLine();
- // Console.WriteLine(A.Key); 
- // TreePrinter.PrintMyTree(this);
-    
         bool found = B.Search(A.Key);
 
         if (!found)
@@ -118,30 +127,23 @@ namespace RadomizedTree
             MyNode parent = GetParet(A);
             if (parent != null)
             {
-              
-               // parent.L_Son.Key = (int) A?.L_Son.Key;
-               if (A.L_Son != null)
-               {
-                 //parent.L_Son.Key = A.L_Son.Key;
-                 if (parent.L_Son.Key == A.Key)
-                 {
-                   parent.L_Son = A?.L_Son;
-                   parent.L_Son.R_Bro = A?.R_Bro;
-                   Delete(parent.L_Son, B);
-                   return;
-                 }
-                 else
-                 {
-                   parent.L_Son.R_Bro = A?.L_Son;
-                   Delete(parent.L_Son.R_Bro, B);
-                 }
-                 //if(parent.L_Son.L_Son!=null)  parent.L_Son.L_Son = null;
-               }
-               else
-                 parent.L_Son = A?.R_Bro;
-               //A = A?.L_Son;
-                
-             // Delete(parent, B);
+              if (A.L_Son != null)
+              {
+                if (parent.L_Son.Key == A.Key)
+                {
+                  parent.L_Son = A?.L_Son;
+                  parent.L_Son.R_Bro = A?.R_Bro;
+                  Delete(parent.L_Son, B);
+                  return;
+                }
+                else
+                {
+                  parent.L_Son.R_Bro = A?.L_Son;
+                  Delete(parent.L_Son.R_Bro, B);
+                }
+              }
+              else
+                parent.L_Son = A?.R_Bro;
               return;
             }
             else
