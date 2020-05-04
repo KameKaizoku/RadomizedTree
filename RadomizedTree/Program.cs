@@ -12,6 +12,7 @@ namespace RadomizedTree
     {
       MyTree A = new MyTree();
       MyTree B = new MyTree();
+     
       Random rnd = new Random();
       var array = Enumerable.Range(1,20).OrderBy(i => rnd.Next()).ToArray();
       var array2 = Enumerable.Range(5,10).OrderBy(i => rnd.Next()).ToArray();
@@ -86,9 +87,9 @@ namespace RadomizedTree
     public void Delete(MyNode A, MyTree B)
       {
         if(A==null) return;
-    //  Console.WriteLine();
-  //  Console.WriteLine(A.Key);
- //  TreePrinter.PrintMyTree(this);
+ Console.WriteLine();
+ Console.WriteLine(A.Key); 
+ TreePrinter.PrintMyTree(this);
     
         bool found = B.Search(A.Key);
 
@@ -98,7 +99,15 @@ namespace RadomizedTree
           if (A.L_Son == null)
           {
             MyNode parent = GetParet(A);
-            if (parent != null) parent.L_Son = A?.R_Bro;
+            if (parent != null)
+            {
+              if(parent.L_Son.Key==A.Key)
+               parent.L_Son = A?.R_Bro;
+              else
+              {
+                parent.L_Son.R_Bro = null;
+              }
+            }
             Delete(parent.L_Son, B);
             return;
             
@@ -155,9 +164,24 @@ namespace RadomizedTree
             }
             MyNode parent2 = GetParet(temp);
             parent2 = GetParet(temp);
-          
-            if (parent2.Key != A.Key) parent2.L_Son = temp?.R_Bro;
-            else parent2.L_Son.R_Bro = null;
+
+            if (parent2.Key != A.Key)
+            {
+              if (temp.L_Son != null)
+              {
+                parent2.L_Son = temp.L_Son;
+                parent2.L_Son.R_Bro = temp.R_Bro;
+              }
+              else parent2.L_Son = temp?.R_Bro;
+
+              // if (parent2.L_Son.R_Bro != null) parent2.L_Son = temp?.R_Bro;
+              // else parent2.L_Son = temp?.L_Son;
+            }
+            else
+            {
+              
+              parent2.L_Son.R_Bro = temp?.L_Son;
+            }
 
             if (parent != null)
             {

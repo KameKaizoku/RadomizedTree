@@ -4,3 +4,9 @@ D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.c
 D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.csproj.CoreCompileInputs.cache
 D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.exe
 D:\Users\123\RiderProjects\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.pdb
+D:\123\Documents\github\RadomizedTree\RadomizedTree\bin\Debug\RadomizedTree.exe
+D:\123\Documents\github\RadomizedTree\RadomizedTree\bin\Debug\RadomizedTree.pdb
+D:\123\Documents\github\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.csprojAssemblyReference.cache
+D:\123\Documents\github\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.csproj.CoreCompileInputs.cache
+D:\123\Documents\github\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.exe
+D:\123\Documents\github\RadomizedTree\RadomizedTree\obj\Debug\RadomizedTree.pdb

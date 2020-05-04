@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\123\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\123\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_RadomizedTree.997460308.00" t="ExcludeRecursive" />
-    <e p="D:\Users\123\RiderProjects\RadomizedTree" t="IncludeFlat">
+    <e p="C:\Users\123\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_RadomizedTree.1393148117.00" t="ExcludeRecursive" />
+    <e p="D:\123\Documents\github\RadomizedTree" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="RadomizedTree" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
