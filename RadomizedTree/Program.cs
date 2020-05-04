@@ -174,8 +174,6 @@ namespace RadomizedTree
               }
               else parent2.L_Son = temp?.R_Bro;
 
-              // if (parent2.L_Son.R_Bro != null) parent2.L_Son = temp?.R_Bro;
-              // else parent2.L_Son = temp?.L_Son;
             }
             else
             {
@@ -203,13 +201,11 @@ namespace RadomizedTree
         if (A.L_Son != null)
         {
           Delete(A.L_Son, B);
-         // return;
         }
 
         if (A.R_Bro != null)
         {
           Delete(A.R_Bro, B);
-         // return;
         }
           
         if ( A.R_Bro == null)
@@ -223,124 +219,13 @@ namespace RadomizedTree
             Delete(A.R_Bro, B);
             return;
           }
-           
-         // return;
+          
         }
-         // Delete(Root,);
         return;
         
       }
-      
-    /* public void Delete(MyNode A,  MyTree B)
-      {
-        if(A==null) return;
-    //   TreePrinter.PrintMyTree(this);
-        var toDel = (B != null && B.Search(A.Key));
-      
-        if (!toDel)
-        {
-          
-          if (A != null && A?.L_Son == null)
-          {
-            MyNode parent = GetParet(A);
-            if (parent != null)
-            {
-              if (parent.L_Son.Key == A.Key) ;
-            }
 
-
-            else Root.L_Son = null;
-            Delete(parent,B);
-            return;
-          }
-
-          if (A != null && (A.L_Son != null && A.L_Son.R_Bro == null))
-          {
-            
-            MyNode parent = GetParet(A);
-           // MyNode lson = A?.L_Son;
-           // lson.R_Bro = A.R_Bro;
-            if (parent != null)
-            {
-              parent.L_Son = A?.L_Son;
-             Delete(parent.L_Son, B);
-              return;
-            }
-            else
-            {
-              Root = A.L_Son;
-              Root.L_Son = A.L_Son.L_Son;
-              Delete(Root, B);
-            }
-           
-            return;
-          }
-
-          if (A != null && A?.L_Son?.R_Bro != null)
-          {
-            
-            MyNode parent = GetParet(A);
-            
-              MyNode temp = A.L_Son.R_Bro;
-              while (temp.L_Son != null)
-              {
-                temp = temp.L_Son;
-              }
-            
-              MyNode parent2 = GetParet(temp);
-              if (parent2 != null)
-              {
-                if(parent2.L_Son.Key==temp.Key)
-                  parent2.L_Son = temp?.R_Bro;
-                else
-                {
-                  parent2.L_Son.R_Bro = null;
-                }
-              }
-
-             A.Key = temp.Key;
-         
-              Delete(A, B);
-              return;
-          }
-          
-        }
-
-        if (A.L_Son != null)
-        {
-          Delete(A.L_Son, B);
-          return;
-        }
-        else
-        {
-          if (A.R_Bro != null)
-          {
-            Delete(A.R_Bro, B);
-            return;
-          }
-          else
-          {
-            if ( A.R_Bro == null)
-            {
-              while(A != null && A.R_Bro==null)
-                A=GetParet(A);
-              if (A == Root) return ;
-              if (A != null)
-              {
-                Delete(A.R_Bro, B);
-                return;
-              }
-           
-              return;
-            }
-          }
-        }
-          
-        
-      }*/
-      
-      
-      public bool Search(int toFind)
+    public bool Search(int toFind)
       {
         bool inTree = false;
         if (toFind == Root.Key) return true;
