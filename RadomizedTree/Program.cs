@@ -87,9 +87,9 @@ namespace RadomizedTree
     public void Delete(MyNode A, MyTree B)
       {
         if(A==null) return;
- Console.WriteLine();
- Console.WriteLine(A.Key); 
- TreePrinter.PrintMyTree(this);
+ // Console.WriteLine();
+ // Console.WriteLine(A.Key); 
+ // TreePrinter.PrintMyTree(this);
     
         bool found = B.Search(A.Key);
 
