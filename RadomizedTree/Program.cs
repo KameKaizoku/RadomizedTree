@@ -30,17 +30,17 @@ namespace RadomizedTree
         }
 
         Console.WriteLine("Tree A\n");
-        //    TreePrinter.PrintMyTree(A);
+        TreePrinter.PrintMyTree(A);
         Console.WriteLine();
         var t = A.Straite(A.Root);
 
         Console.WriteLine("\nTree B\n");
-        //   TreePrinter.PrintMyTree(B);
+         TreePrinter.PrintMyTree(B);
         B.Symmetric(B.Root);
 
         A.Delete(A.Root, B);
-        Console.WriteLine("\nTree A\n");
-        TreePrinter.PrintMyTree(A);
+       Console.WriteLine("\nTree A\n");
+       TreePrinter.PrintMyTree(A);
       }
 
     }
@@ -97,10 +97,14 @@ namespace RadomizedTree
       {
 
         if (node1 == null) return;
-
-        Symmetric(node1.L_Son);
-        Console.Write($"{node1.Key} ");
-        Symmetric(node1.L_Son?.R_Bro);
+       if(node1.L_Son!=null && node1.Key>node1.L_Son.Key)
+         Symmetric(node1.L_Son);
+       Console.Write($"{node1.Key} ");   
+        if(node1.L_Son?.R_Bro!=null)  
+          Symmetric(node1.L_Son?.R_Bro);
+          
+        else   
+          Symmetric(node1.L_Son);
 
       }
 
