@@ -377,8 +377,12 @@ namespace RadomizedTree
         {
           A.R_Bro = B;
         }
-
+        if (B != null)
+        {
+          B.R_Bro = null;
+        }
         parent.L_Son = A ?? B;
+        myNode.R_Bro = parent.R_Bro;
         parent.R_Bro = C;
         myNode.L_Son = parent;
 
